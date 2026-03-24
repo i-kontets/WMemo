@@ -19,11 +19,15 @@ function App() {
         setMemos([...memos, newMemo]);
     };
 
+    const deleteMemo = (id) => {
+        setMemos(memos.filter((memo) => memo.id !== id));
+    };
+
     return (
         <div>
             <Header />
             <SearchBar search={search} setSearch={setSearch} />
-            <MemoList search={search} memos={memos} />
+            <MemoList search={search} memos={memos} deleteMemo={deleteMemo} />
             <div style={{ padding: "10px" }}>
                 <h3>メモ追加</h3>
                 <MemoInput addMemo={addMemo} />

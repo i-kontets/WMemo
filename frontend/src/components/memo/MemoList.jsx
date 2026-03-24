@@ -1,6 +1,6 @@
 import MemoItem from "./MemoItem";
 
-function MemoList({ search, memos }) {
+function MemoList({ search, memos, deleteMemo }) {
     const filteredMemos = memos.filter((memo) =>
         memo.title.toLowerCase().includes(search.toLowerCase())
     );
@@ -10,8 +10,10 @@ function MemoList({ search, memos }) {
             {filteredMemos.map((memo) => (
                 <MemoItem
                     key={memo.id}
+                    id={memo.id}
                     title={memo.title}
                     content={memo.content}
+                    deleteMemo={deleteMemo}
                 />
             ))}
         </div>
