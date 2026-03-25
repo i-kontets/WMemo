@@ -1,6 +1,6 @@
 import MemoItem from "./MemoItem";
 
-function MemoList({ search, memos, deleteMemo }) {
+function MemoList({ search, memos, deleteMemo, setEditingMemo }) {
     const filteredMemos = memos.filter((memo) =>
         memo.title.toLowerCase().includes(search.toLowerCase())
     );
@@ -14,6 +14,7 @@ function MemoList({ search, memos, deleteMemo }) {
                     title={memo.title}
                     content={memo.content}
                     deleteMemo={deleteMemo}
+                    setEditingMemo={setEditingMemo}
                 />
             ))}
         </div>
