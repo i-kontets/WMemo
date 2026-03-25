@@ -90,25 +90,48 @@ function MemoInput({ addMemo, updateMemo, editingMemo, setEditingMemo }) {
     };
 
     return (
-        <div>
+        <div style={{ marginTop: "20px" }}>
             <input
                 type="text"
                 placeholder="タイトル"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                style={{ width: "100%", padding: "10px", marginBottom: "10px" }}
+                style={{
+                    width: "100%",
+                    padding: "12px",
+                    fontSize: "16px",
+                    marginBottom: "10px",
+                    borderRadius: "8px",
+                    border: "1px solid #ccc"
+                }}
             />
+
             <textarea
                 placeholder="内容"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
-                style={{ width: "100%", padding: "10px", marginBottom: "10px" }}
+                style={{
+                    width: "100%",
+                    padding: "12px",
+                    fontSize: "16px",
+                    marginBottom: "10px",
+                    borderRadius: "8px",
+                    border: "1px solid #ccc"
+                }}
             />
-            <button style={{ width: "100%", padding: "10px" }} onClick={handleSubmit}>
+
+            <button
+                style={{
+                    width: "100%",
+                    padding: "14px",
+                    fontSize: "16px",
+                    borderRadius: "8px"
+                }}
+                onClick={handleSubmit}
+            >
                 {editingMemo ? "更新" : "追加"}
             </button>
         </div>
     );
 }
-
 export default App;
